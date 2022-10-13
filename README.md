@@ -12,3 +12,8 @@ sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_
 
 #Instalar PgAdmin4 Web e Desktop
 sudo apt install pgadmin4
+
+
+#erro do pgadmin
+//nao conectar ao server postgres
+usar o endereço IP 127.0.0.1 em ADD NEW SERVER

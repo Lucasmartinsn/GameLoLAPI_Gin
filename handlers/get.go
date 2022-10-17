@@ -1,10 +1,19 @@
 package handlers
 
-import "github.com/gin-gonic/gin"
+import (
+	"log"
+
+	"github.com/Lucasmartinsn/new-api-gin/models"
+	"github.com/gin-gonic/gin"
+)
 
 func Get(c *gin.Context) {
+	resp, err := models.GetAll()
 
-	c.JSON(200, gin.H{
-		"value": "funciona",
-	})
+	if err != nil {
+		log.Fatalln(err)
+	} else {
+		c.JSON(200, resp)
+	}
+
 }

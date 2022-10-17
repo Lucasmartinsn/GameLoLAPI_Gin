@@ -2,8 +2,12 @@ package models
 
 import "github.com/Lucasmartinsn/new-api-gin/server/db"
 
-func GetAll() (records []Record) {
-	conn := db.Conectar()
+func GetAll() (records []Record, err error) {
+	conn, err := db.Conectar()
+
+	if err != nil {
+		return
+	}
 
 	defer conn.Close()
 

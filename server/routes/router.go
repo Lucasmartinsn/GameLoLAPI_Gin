@@ -11,6 +11,7 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 		lol := main.Group("lol")
 		{
 			lol.GET("/", handlers.Get)
+			lol.GET("/:id", handlers.GetOne)
 		}
 	}
 

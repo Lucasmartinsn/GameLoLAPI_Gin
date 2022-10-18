@@ -12,6 +12,7 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 		{
 			lol.GET("/", handlers.Get)
 			lol.GET("/:id", handlers.GetOne)
+			lol.PUT("/:id", handlers.Update)
 		}
 	}
 

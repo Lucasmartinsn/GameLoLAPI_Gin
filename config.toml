@@ -3,4 +3,4 @@
 host = "localhost"
 user = "postgres"
 pass = "123"
-name = "Banco_api2"
+name = "banco_api3"

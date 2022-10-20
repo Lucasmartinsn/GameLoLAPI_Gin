@@ -2,7 +2,7 @@ package infogame
 
 import "github.com/Lucasmartinsn/new-api-gin/db"
 
-func Insert(infogame Infogame) (id int, err error) {
+func Insertinfo(infogame Infogame) (id int, err error) {
 	conn, err := db.OpenConnection()
 	if err != nil {
 		return

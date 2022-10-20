@@ -10,9 +10,9 @@ func Insert(records Record) (id int, err error) {
 		return
 	}
 
-	sql := `INSERT INTO records (foto, nome_usuario, email, senha) VALUES ($1,$2,$3,$4) RETURNING id_user`
+	sql := `INSERT INTO records (foto, nome_usuario, email) VALUES ($1,$2,$3) RETURNING id`
 
-	err = conn.QueryRow(sql, records.Foto, records.Nome_usuario, records.Email, records.Senha).Scan(&id)
+	err = conn.QueryRow(sql, records.Foto, records.Nome_usuario, records.Email).Scan(&id)
 
 	defer conn.Close()
 

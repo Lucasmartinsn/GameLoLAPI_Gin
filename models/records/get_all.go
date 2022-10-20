@@ -11,7 +11,7 @@ func GetAll() (redords []Record, err error) {
 
 	defer conn.Close()
 
-	rows, err := conn.Query(`SELECT id_user, foto,nome_usuario,email,senha FROM records`)
+	rows, err := conn.Query(`SELECT id, foto,nome_usuario,email FROM records`)
 	if err != nil {
 		return
 	}
@@ -19,7 +19,7 @@ func GetAll() (redords []Record, err error) {
 	for rows.Next() {
 		var newRecordes Record
 
-		err = rows.Scan(&newRecordes.Id_user, &newRecordes.Foto, &newRecordes.Nome_usuario, &newRecordes.Email, &newRecordes.Senha)
+		err = rows.Scan(&newRecordes.Id, &newRecordes.Foto, &newRecordes.Nome_usuario, &newRecordes.Email)
 		if err != nil {
 			continue
 		}

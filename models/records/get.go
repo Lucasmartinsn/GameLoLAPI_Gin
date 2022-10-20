@@ -11,9 +11,9 @@ func Get(id int) (records Record, err error) {
 
 	defer conn.Close()
 
-	row := conn.QueryRow(`SELECT id_user, foto,nome_usuario,email,senha FROM records WHERE id_user=$1`, id)
+	row := conn.QueryRow(`SELECT id, foto,nome_usuario,email FROM records WHERE id=$1`, id)
 
-	err = row.Scan(&records.Id_user, &records.Foto, &records.Nome_usuario, &records.Email, &records.Senha)
+	err = row.Scan(&records.Id, &records.Foto, &records.Nome_usuario, &records.Email)
 
 	return
 }

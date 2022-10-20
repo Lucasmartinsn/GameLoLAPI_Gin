@@ -3,7 +3,7 @@ package handlers
 import (
 	"strconv"
 
-	"github.com/Lucasmartinsn/new-api-gin/models"
+	models "github.com/Lucasmartinsn/new-api-gin/models/records"
 	"github.com/gin-gonic/gin"
 )
 

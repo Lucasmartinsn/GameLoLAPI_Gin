@@ -1,7 +1,7 @@
 package router
 
 import (
-	handlers "github.com/Lucasmartinsn/new-api-gin/handles"
+	handlers "github.com/Lucasmartinsn/new-api-gin/handles/records"
 	"github.com/gin-gonic/gin"
 )
 

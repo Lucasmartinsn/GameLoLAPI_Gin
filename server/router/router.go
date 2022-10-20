@@ -6,15 +6,16 @@ import (
 )
 
 func ConfigRoutes(router *gin.Engine) *gin.Engine {
-	main := router.Group("api/v1")
+	main := router.Group("api")
 	{
-		lol := main.Group("lol")
+		lol := main.Group("")
 		{
-			lol.GET("/", handlers.Get)
-			lol.GET("/:id", handlers.GetOne)
-			lol.POST("/", handlers.Create)
-			lol.PUT("/:id", handlers.Update)
-			lol.DELETE("/:id", handlers.Delete)
+			lol.GET("/user", handlers.Get)
+			lol.GET("/user/:id", handlers.GetOne)
+			lol.POST("/user", handlers.Create)
+			lol.PUT("/user/:id", handlers.Update)
+			lol.DELETE("/user/:id", handlers.Delete)
+			lol.PUT("/user/:id/foto", handlers.Upfoto)
 		}
 	}
 

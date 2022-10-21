@@ -2,7 +2,7 @@ package models
 
 import "github.com/Lucasmartinsn/new-api-gin/db"
 
-func Upfoto(id int64, records Record) (int64, error) {
+func Upfoto(id int64, records Testerecord) (int64, error) {
 	conn, err := db.OpenConnection()
 	if err != nil {
 		return 0, err

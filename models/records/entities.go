@@ -7,3 +7,7 @@ type Record struct {
 	Nome_usuario string `json:"nome_usuario"`
 	Email        string `json:"Email"`
 }
+
+type Testerecord struct {
+	Foto string `json:"foto"`
+}

@@ -1,6 +1,7 @@
 package router
 
 import (
+	handlersa "github.com/Lucasmartinsn/new-api-gin/handles/info_game"
 	handlers "github.com/Lucasmartinsn/new-api-gin/handles/records"
 	"github.com/gin-gonic/gin"
 )
@@ -16,6 +17,9 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 			lol.PUT("/user/:id", handlers.Update)
 			lol.DELETE("/user/:id", handlers.Delete)
 			lol.PUT("/user/:id/foto", handlers.Upfoto)
+			lol.POST("/user/info/:id", handlersa.CreateInfo)
+			lol.GET("/user/info/:id", handlersa.Getinfo)
+			lol.PUT("/user/info/:id", handlersa.Updateinfo)
 		}
 	}
 

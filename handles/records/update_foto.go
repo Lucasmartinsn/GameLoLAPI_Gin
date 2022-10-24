@@ -18,7 +18,7 @@ func Upfoto(c *gin.Context) {
 		return
 	}
 
-	var records models.Testerecord
+	var records models.Putfoto
 
 	err = c.ShouldBindJSON(&records)
 	if err != nil {

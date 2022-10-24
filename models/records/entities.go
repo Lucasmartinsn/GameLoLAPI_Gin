@@ -21,6 +21,7 @@ type Record struct {
 	Foto          string `json:"foto"`
 	Nome_usuario  string `json:"nome_usuario"`
 	Email         string `json:"Email"`
+	Senha         string `json:"senha"`
 	Nick_game     string `json:"nick_game"`
 	Descricao     string `json:"descricao"`
 	Days_play     string `json:"days_play"`

@@ -1,13 +1,30 @@
 package models
 
 /// Tabela com os typos e os campos da tabela
+/*
 type Record struct {
 	Id           int    `json:"id"`
 	Foto         string `json:"foto"`
 	Nome_usuario string `json:"nome_usuario"`
 	Email        string `json:"Email"`
 }
-
-type Testerecord struct {
+*/
+type Putfoto struct {
 	Foto string `json:"foto"`
+}
+type Putnome struct {
+	Nome_usuario string `json:"nome_usuario"`
+}
+
+type Record struct {
+	Id            int    `json:"id"`
+	Foto          string `json:"foto"`
+	Nome_usuario  string `json:"nome_usuario"`
+	Email         string `json:"Email"`
+	Nick_game     string `json:"nick_game"`
+	Descricao     string `json:"descricao"`
+	Days_play     string `json:"days_play"`
+	Position_game string `json:"position_game"`
+	Play_time     int    `json:"play_time"`
+	Comunication  string `json:"comunication"`
 }

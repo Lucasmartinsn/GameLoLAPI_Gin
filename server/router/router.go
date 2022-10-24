@@ -17,7 +17,7 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 			lol.PUT("/user/:id", handlers.Update)
 			lol.DELETE("/user/:id", handlers.Delete)
 			lol.PUT("/user/:id/foto", handlers.Upfoto)
-			lol.POST("/user/info/:id", handlersa.CreateInfo)
+			lol.PUT("/user/:id/name", handlers.Upname)
 			lol.GET("/user/info/:id", handlersa.Getinfo)
 			lol.PUT("/user/info/:id", handlersa.Updateinfo)
 		}

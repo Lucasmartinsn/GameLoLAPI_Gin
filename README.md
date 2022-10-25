@@ -37,7 +37,7 @@ create table recordss(
 
 }
 ]
-
+```
 # Documentação da API
 
 ## GET todos.

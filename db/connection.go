@@ -16,7 +16,7 @@ func OpenConnection() (*sql.DB, error) {
 
 	conn, err := sql.Open("postgres", sc)
 	if err != nil {
-		panic((err))
+		panic(err)
 	}
 
 	err = conn.Ping()

@@ -18,6 +18,26 @@ sudo apt install pgadmin4
 //nao conectar ao server postgres
 usar o endereço IP 127.0.0.1 em ADD NEW SERVER
 
+```json
+[
+{
+create table recordss(
+	id serial PRIMARY KEY not null,  
+ 	foto varchar(2048) NOT NULL ,  
+ 	nome_usuario VARCHAR(40) NOT NULL,  
+ 	email VARCHAR(40) NOT NULL,
+	senha int not null,
+	nick_game VARCHAR(30) NOT NULL,  
+ 	descricao VARCHAR(200) NOT NULL,  
+	days_play VARCHAR(20) NOT NULL,  
+ 	position_game VARCHAR(20) NOT NULL,  
+ 	play_time INT NOT NULL,  
+ 	comunication varchar(10) NOT NULL 
+)
+
+}
+]
+
 # Documentação da API
 
 ## GET todos.

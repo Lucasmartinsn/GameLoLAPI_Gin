@@ -43,6 +43,7 @@ func Upfoto(c *gin.Context) {
 			"Error":   true,
 			"Mensage": "erro: foram atualizador %d registros",
 		})
+		return
 	}
 
 	resp := map[string]any{

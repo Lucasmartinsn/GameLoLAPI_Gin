@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Upname(c *gin.Context) {
+func Upsenha(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("id"))
 
 	if err != nil {
@@ -18,7 +18,7 @@ func Upname(c *gin.Context) {
 		return
 	}
 
-	var record models.Putnome
+	var record models.Putsenha
 
 	err = c.ShouldBindJSON(&record)
 	if err != nil {
@@ -29,7 +29,7 @@ func Upname(c *gin.Context) {
 		return
 	}
 
-	rows, err := models.Upname(int64(id), record)
+	rows, err := models.Upsenha(int64(id), record)
 	if err != nil {
 		c.JSON(400, gin.H{
 			"Error":   true,

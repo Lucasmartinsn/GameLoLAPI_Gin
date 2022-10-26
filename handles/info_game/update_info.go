@@ -40,8 +40,9 @@ func Updateinfo(c *gin.Context) {
 	if rows > 1 {
 		c.JSON(400, gin.H{
 			"Error":   true,
-			"Mensage": "erro: foram atualizador %d registros",
+			"Mensage": "erro: foram atualizador %d registros" + err.Error(),
 		})
+		return
 	}
 
 	resp := map[string]any{
@@ -50,5 +51,4 @@ func Updateinfo(c *gin.Context) {
 	}
 
 	c.JSON(200, resp)
-
 }

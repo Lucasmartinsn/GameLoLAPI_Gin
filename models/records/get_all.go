@@ -2,7 +2,7 @@ package models
 
 import "github.com/Lucasmartinsn/new-api-gin/db"
 
-func GetAll() (redords []Record, err error) {
+func GetAll() (redords []Recordg, err error) {
 	conn, err := db.OpenConnection()
 
 	if err != nil {
@@ -17,7 +17,7 @@ func GetAll() (redords []Record, err error) {
 	}
 
 	for rows.Next() {
-		var newRecordes Record
+		var newRecordes Recordg
 
 		err = rows.Scan(&newRecordes.Id, &newRecordes.Foto, &newRecordes.Nome_usuario, &newRecordes.Email, &newRecordes.Nick_game, &newRecordes.Days_play, &newRecordes.Position_game,
 			&newRecordes.Play_time, &newRecordes.Comunication)

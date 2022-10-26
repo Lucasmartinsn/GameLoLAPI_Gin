@@ -2,7 +2,7 @@ package models
 
 import "github.com/Lucasmartinsn/new-api-gin/db"
 
-func Get(id int) (records Record, err error) {
+func Get(id int) (records Recordg, err error) {
 	conn, err := db.OpenConnection()
 
 	if err != nil {

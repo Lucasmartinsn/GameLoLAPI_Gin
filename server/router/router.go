@@ -2,6 +2,7 @@ package router
 
 import (
 	info_game "github.com/Lucasmartinsn/new-api-gin/handles/info_game"
+	login "github.com/Lucasmartinsn/new-api-gin/handles/login"
 	info_user "github.com/Lucasmartinsn/new-api-gin/handles/records"
 	info_runes "github.com/Lucasmartinsn/new-api-gin/handles/runas"
 	"github.com/gin-gonic/gin"
@@ -24,6 +25,7 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 			lol.GET("/runes/principais", info_runes.GetrunaP)
 			lol.GET("/runes/secundarias", info_runes.Getrunes)
 			lol.PUT("/runes/secundarias/:id", info_runes.Upimgrunas)
+			lol.POST("/login/senha", login.Verificalogin)
 		}
 	}
 

@@ -26,6 +26,7 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 			lol.GET("/runes/secundarias", info_runes.Getrunes)
 			lol.PUT("/runes/secundarias/:id", info_runes.Upimgrunas)
 			lol.POST("/login/senha", login.Verificalogin)
+			lol.PUT("/:id", info_user.Update)
 		}
 	}
 

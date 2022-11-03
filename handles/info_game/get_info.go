@@ -20,7 +20,7 @@ func Getinfo(c *gin.Context) {
 	register, err := models.Getinfo(int(id))
 	if err != nil {
 		c.JSON(400, gin.H{
-			"Error": "geristro nao existe",
+			"Error": "registro nao existe",
 		})
 		return
 	}

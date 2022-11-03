@@ -12,7 +12,7 @@ func Verificalogin(c *gin.Context) {
 
 	if err != nil {
 		c.JSON(400, gin.H{
-			"Error": "id tem de ser um int",
+			"Error": "id deve ser um numero",
 		})
 		return
 	}
@@ -20,7 +20,7 @@ func Verificalogin(c *gin.Context) {
 	register, err := models.Verificalogin(int(id))
 	if err != nil {
 		c.JSON(400, gin.H{
-			"Error": "geristro nao existe",
+			"Error": "registro nao existe",
 		})
 		return
 	}

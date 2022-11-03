@@ -45,12 +45,9 @@ func Upfoto(c *gin.Context) {
 		})
 		return
 	}
-
-	resp := map[string]any{
-		"Error":   false,
+	
+	c.JSON(200, gin.H{
 		"mensage": "dados atualizados com sucesso",
-	}
-
-	c.JSON(200, resp)
+	})
 
 }

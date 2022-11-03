@@ -20,11 +20,24 @@ type Putsenha struct {
 	Senha int `json:"senha"`
 }
 
+type StructUpdateInformacoes struct {
+	Foto          string `json:"foto"`
+	Nome_usuario  string `json:"nome_usuario"`
+	Email         string `json:"email"`
+	Senha         int    `json:"senha"`
+	Nick_game     string `json:"nick_game"`
+	Descricao     string `json:"descricao"`
+	Days_play     string `json:"days_play"`
+	Position_game string `json:"position_game"`
+	Play_time     int    `json:"play_time"`
+	Comunication  string `json:"comunication"`
+}
+
 type Recordg struct {
 	Id            int    `json:"id"`
 	Foto          string `json:"foto"`
 	Nome_usuario  string `json:"nome_usuario"`
-	Email         string `json:"Email"`
+	Email         string `json:"email"`
 	Nick_game     string `json:"nick_game"`
 	Descricao     string `json:"descricao"`
 	Days_play     string `json:"days_play"`
@@ -37,7 +50,7 @@ type Record struct {
 	Id            int    `json:"id"`
 	Foto          string `json:"foto"`
 	Nome_usuario  string `json:"nome_usuario"`
-	Email         string `json:"Email"`
+	Email         string `json:"email"`
 	Senha         int    `json:"senha"`
 	Nick_game     string `json:"nick_game"`
 	Descricao     string `json:"descricao"`

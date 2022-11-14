@@ -20,12 +20,13 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 			lol.DELETE("/:id", info_user.Delete)
 			lol.PUT("/:id/foto", info_user.Upfoto)
 			lol.PUT("/:id/name", info_user.Upname)
+			lol.PUT("/:id/senha", info_user.Upsenha)
 			lol.GET("/info/:id", info_game.Getinfo)
 			lol.PUT("/info/:id", info_game.Updateinfo)
 			lol.GET("/runes/principais", info_runes.GetrunaP)
 			lol.GET("/runes/secundarias", info_runes.Getrunes)
 			lol.PUT("/runes/secundarias/:id", info_runes.Upimgrunas)
-			lol.POST("/login/senha", login.Verificalogin)
+			lol.GET("/login/:id", login.Verificalogin)
 		}
 	}
 

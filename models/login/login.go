@@ -10,7 +10,7 @@ func Verificalogin(senha int) (login Login, err error) {
 
 	defer conn.Close()
 
-	sql := conn.QueryRow(`SELECT senha FROM recordss WHERE senha=$1'`, senha)
+	sql := conn.QueryRow(`SELECT *FROM recordss WHERE id=$1`, senha)
 
 	err = sql.Scan(&login.Senha)
 

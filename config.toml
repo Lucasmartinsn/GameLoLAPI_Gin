@@ -1,6 +1,6 @@
-
+# Arquivo de configuração da conexão com o banco de dados.
 [database]
 host = "localhost"
-user = "postgres"
-pass = "123"
-name = "banco_api3"
+user = "nameUser"
+pass = "PasswordDatabase"
+name = "NameDatabase"

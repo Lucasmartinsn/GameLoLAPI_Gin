@@ -1,4 +1,4 @@
-# new-api-gin
+# GameLoLAPI_Gin
 
 comando uteis:
 
@@ -18,13 +18,16 @@ sudo apt install pgadmin4
 //nao conectar ao server postgres
 usar o endereço IP 127.0.0.1 em ADD NEW SERVER
 
-# Documentação da API
+# API documentation
+
+###### User manipulation
 
 ## Metodos GETs
 
-## GET todos.
+## Get all users
 
 URL - http://localhost:8080/user
+
 Resposta:
 
 ```json
@@ -44,9 +47,10 @@ Resposta:
 ]
 ```
 
-## Get one
+## Get one user
 
-URL - http://localhost:8080/user/1
+URL - http://localhost:8080/user/id
+
 Resposta:
 
 ```json
@@ -64,8 +68,9 @@ Resposta:
 }
 ```
 
-## Get one apenas os campos(nick_game,descricao,days_play,position_game,Play_time,comunication)
-URL - http://localhost:8080/user/info/1
+## Get one user, info the game.
+URL - http://localhost:8080/user/info/id
+
 Resposta:
 
 ```json
@@ -79,10 +84,106 @@ Resposta:
   "comunication": "1"
 }
 ```
+## Metodo POST 
 
-## Get runas principais
+URL - http://localhost:8080/user
+
+Forma de envio:
+
+```json
+  {
+    "foto": "https://www.kindpng.com/picc/m/378-3787490_overlord-anime-poster-png-download-overlord-season-       2.png",
+    "nome_usuario": "kakashi hatake",
+    "email": "rinandobito@",
+    "senha": 987854,
+    "nick_game":"logt",
+    "descricao":"pegador de casada",
+    "days_play":"segunda",
+    "position_game":"camper",
+    "Play_time": 4,
+    "comunication":"chat"
+  }
+```
+## Metodos PUTs
+
+## Put all fields
+
+URL - http://localhost:8080/user/id
+
+Forma de envio:
+```json
+  {
+    "foto": "https://www.kindpng.com/picc/m/378-3787490_overlord-anime-poster-png-download-overlord-season-       2.png",
+    "nome_usuario": "kakashi hatake",
+    "email": "rinandobito@",
+    "senha": 987854,
+    "nick_game":"logt",
+    "descricao":"pegador de casada",
+    "days_play":"segunda",
+    "position_game":"camper",
+    "Play_time": 4,
+    "comunication":"chat"
+  }
+```
+
+## Put fields Photograph
+
+URL - http://localhost:8080/user/id/foto
+
+Forma de envio:
+```json
+  {
+    "foto": "https://www.kindpng.com/picc/m/378-3787490_overlord-anime-poster-png-download-overlord-season-       2.png",
+  }
+  ```
+  ## Put fields name
+  
+  URL - http://localhost:8080/user/id/name
+  
+  Forma de envio:
+  ```json
+  {
+    "nome_usuario": "sakura uchiha"
+  }
+  ```
+  ## Put fields password
+  
+  URL - http://localhost:8080/user/id/password
+  
+  Forma de envio:
+  ```json
+  {
+    "senha": "sakura uchiha"
+  }
+  ```
+
+  ## Put info the game
+  
+  URL - http://localhost:8080/user/info/id
+  
+  Forma de envio:
+  ```json
+    {
+      "nick_game": "logt",
+      "descricao": "",
+      "days_play": "segunda",
+      "position_game": "camper",
+      "play_time": 4,
+      "comunication": "chat"
+     }
+```
+
+
+## Metodo DELETE
+    URL - http://localhost:8080/user/id
+
+    
+### rune manipulation
+
+## Get all rune mains
 
 URL - http://localhost:8080/user/runes/principais
+
 Resposta:
 ```json
 {
@@ -91,9 +192,11 @@ Resposta:
   "nome": "Precision"
 }
 ```
-## Get runas secundarias
+
+## Get all runas secondary
 
 URL - http://localhost:8080/user/runes/secundarias
+
 Resposta:
 ```json
   [
@@ -117,77 +220,21 @@ Resposta:
 	}
   ]
 ```
-## Metodo POST 
 
-URL - http://localhost:8080/user
-Forma de envio:
+## Get all rune secondary.
 
+This method will return all child runes linked to a parent rune. The id parameter must be the id of the main rune.
+
+URL - http://localhost:8080/user/runes/secundarias/id
+
+Resposta:
 ```json
-  {
-    "foto": "https://www.kindpng.com/picc/m/378-3787490_overlord-anime-poster-png-download-overlord-season-       2.png",
-    "nome_usuario": "kakashi hatake",
-    "email": "rinandobito@",
-    "senha": 987854,
-    "nick_game":"logt",
-    "descricao":"pegador de casada",
-    "days_play":"segunda",
-    "position_game":"camper",
-    "Play_time": 4,
-    "comunication":"chat"
-  }
-```
-## Metodos PUTs
-
-## Put todos os campos
-
-URL - http://localhost:8080/user/3
-Forma de envio:
-```json
-  {
-    "foto": "https://www.kindpng.com/picc/m/378-3787490_overlord-anime-poster-png-download-overlord-season-       2.png",
-    "nome_usuario": "kakashi hatake",
-    "email": "rinandobito@",
-    "senha": 987854,
-    "nick_game":"logt",
-    "descricao":"pegador de casada",
-    "days_play":"segunda",
-    "position_game":"camper",
-    "Play_time": 4,
-    "comunication":"chat"
-  }
-```
-
-## Put campo Foto
-
-URL - http://localhost:8080/user/1/foto
-Forma de envio:
-```json
-  {
-    "foto": "https://www.kindpng.com/picc/m/378-3787490_overlord-anime-poster-png-download-overlord-season-       2.png",
-  }
-  ```
-  ## Put campo de Nome
-  
-  URL - http://localhost:8080/user/1/name
-  Forma de envio:
-  ```json
-  {
-    "nome_usuario": "sakura uchiha"
-  }
-  ```
-  ## Put informações sobre o Jogo
-  
-  URL - http://localhost:8080/user/info/1
-  Forma de envio:
-  ```json
+  [
     {
-      "nick_game": "logt",
-      "descricao": "",
-      "days_play": "segunda",
-      "position_game": "camper",
-      "play_time": 4,
-      "comunication": "chat"
-     }
-    ```
-    ## Metodo DELETE
-    URL - http://localhost:8080/user/1
+		"id": 8100,
+		"id_rune": 8128,
+		"img": "nao achei",
+		"nome": "DarkHarvest"
+	}
+  ]
+```
